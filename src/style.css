@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    margin: 2vh;
+    font-size: 40px;
+    font-family: monospace;
+}
+
+/*Adding to dos*/
+.toDoForm {
+    width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+
+.toDoForm label {
+    font-size: 18px;
+    margin: 5px;
+    justify-self: end;
+}
+
+.addToDo {
+    width: 30%;
+    margin-right: 10%;
+    grid-column: 1 / span 2;
+    justify-self: end;
+}
