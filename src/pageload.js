@@ -1,5 +1,4 @@
-//Imports.
-import { addToDoForm } from './addToDo.js'; 
+
 
 //Page elements object.
 const pageElements = (() => {
@@ -8,29 +7,30 @@ const pageElements = (() => {
 
     const main = document.createElement('main');
 
-    const addToDos = document.createElement('section');
-    addToDos.classList.add('addToDos');
-    main.appendChild(addToDos);
+    const nav = document.createElement('nav');
 
-    const addBtn = document.createElement('button');
-    addBtn.textContent = 'Add';
-    addBtn.addEventListener('click', () => {
-        toDoForm.classList.add('revealForm');
-    })
-    addToDos.appendChild(addBtn);
+    const navList = document.createElement('ul');
+    nav.appendChild(navList);
+    const addToDo = document.createElement('li');
+    addToDo.textContent = 'Add To Do'
+    navList.appendChild(addToDo);
+    const startProject = document.createElement('li');
+    startProject.textContent = 'Start Project';
+    navList.appendChild(startProject);
+    const displayToDos = document.createElement('li');
+    displayToDos.textContent = "To Do's"
+    navList.appendChild(displayToDos);
+    const displayProjects =  document.createElement('li');
+    displayProjects.textContent = "Projects";
+    navList.appendChild(displayProjects);
+    
 
-    const toDoForm = addToDoForm();
-    addToDos.appendChild(toDoForm); 
-
-    const toDos = document.createElement('section');
-    main.appendChild(toDos);
-
-    return {h1, main}
+    return {h1, main, nav}
 })();
 
 function pageload(){
     document.body.appendChild(pageElements.h1);
-
+    document.body.appendChild(pageElements.nav);
     document.body.appendChild(pageElements.main);
 }
 

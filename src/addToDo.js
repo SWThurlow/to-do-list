@@ -1,10 +1,5 @@
-//Adding a to do based on data provided.
-function addToDo() {
-
-}
-
 //Function to generate form to add a to do.
-function addToDoForm() {
+const addToDo = (() =>{
     const toDoForm = document.createElement('form');
     toDoForm.classList.add('toDoForm');
 
@@ -53,7 +48,7 @@ function addToDoForm() {
     addToDo.textContent = 'Add';
     toDoForm.appendChild(addToDo);
 
-    return toDoForm
-}
+    return { addToDoForm, titleInput, descriptionInput, dueInput, priorityInput}
+})()
 
-export { addToDoForm }
+export { addToDo, toDoList }
