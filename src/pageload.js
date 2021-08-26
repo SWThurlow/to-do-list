@@ -1,4 +1,5 @@
-
+//Importing pages for nav bar.
+import { addToDoForm } from "./addToDo";
 
 //Page elements object.
 const pageElements = (() => {
@@ -14,6 +15,11 @@ const pageElements = (() => {
     const addToDo = document.createElement('li');
     addToDo.textContent = 'Add To Do'
     navList.appendChild(addToDo);
+    addToDo.addEventListener('click', () => {
+        main.appendChild(addToDoForm.toDoForm);
+    });
+
+
     const startProject = document.createElement('li');
     startProject.textContent = 'Start Project';
     navList.appendChild(startProject);
