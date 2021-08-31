@@ -1,11 +1,9 @@
-import { LibManifestPlugin } from "webpack";
-
-//Storing the to do list.
+//Storing to do's.
 let toDoList = [];
 
 //Function to generate form to add a to do.
 const addToDoForm = (() =>{
-    const toDoForm = document.createElement('form');
+    const toDoForm = document.createElement('div');
     toDoForm.classList.add('toDoForm');
 
     const titleLabel = document.createElement('label');
@@ -51,23 +49,18 @@ const addToDoForm = (() =>{
     const addToDo = document.createElement('button');
     addToDo.classList.add('addToDo');
     addToDo.textContent = 'Add';
+    //Pushing to dos to list.
+    addToDo.addEventListener('click', (e) => {
+        toDoList.push({
+            title: addToDoForm.titleInput.value,
+            desc: addToDoForm.descriptionInput.value,
+            due: addToDoForm.dueInput.value,
+            priority: addToDoForm.priorityInput.value,
+        });
+    });
     toDoForm.appendChild(addToDo);
 
     return { toDoForm, titleInput, descriptionInput, dueInput, priorityInput, addToDo}
 })()
-
-
-//Pushing to dos to list.
-addToDoForm.addToDo.addEventListener('click', () => {
-    toDoList.push({
-        title: addToDoForm.titleInput.value,
-        desc: addToDoForm.descriptionInput.value,
-        due: addToDoForm.dueInput.value,
-        priority: addToDoForm.priorityInput.value,
-    });
-    const main = document.querySelector('main');
-    main.appendChild(addToDoForm.toDoForm);
-    console.log(toDoList);
-});
 
 export { addToDoForm, toDoList }
