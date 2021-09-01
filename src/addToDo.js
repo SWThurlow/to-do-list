@@ -1,5 +1,10 @@
 //Storing to do's.
-let toDoList = [];
+let toDoList = [{
+    title: 'Hello!',
+    desc: 'Howdy Neighbour.',
+    due: '15/02/2022',
+    priority: '4',
+}];
 
 //Function to generate form to add a to do.
 const addToDoForm = (() =>{
@@ -57,6 +62,10 @@ const addToDoForm = (() =>{
             due: addToDoForm.dueInput.value,
             priority: addToDoForm.priorityInput.value,
         });
+        addToDoForm.titleInput.value = '';
+        addToDoForm.descriptionInput.value = '';
+        addToDoForm.dueInput.value = '';
+        addToDoForm.priorityInput.value = '3';
     });
     toDoForm.appendChild(addToDo);
 

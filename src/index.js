@@ -2,6 +2,7 @@ import './resetstyle.css';
 import './style.css';
 //Imports.
 import { addToDoForm } from './addToDo.js'; 
+import { toDoDisplay } from './displayLists';
 
 //Page elements object.
 const pageElements = (() => {
@@ -18,6 +19,7 @@ const pageElements = (() => {
     addToDo.textContent = 'Add To Do';
     navList.appendChild(addToDo);
     addToDo.addEventListener('click', () => {
+        [...main.childNodes].forEach(child => main.removeChild(child));
         main.appendChild(addToDoForm.toDoForm);
     });
 
@@ -30,7 +32,9 @@ const pageElements = (() => {
     displayToDos.textContent = "To Do's";
     navList.appendChild(displayToDos);
     displayToDos.addEventListener('click', () => {
-        main.appendChild(toDoDisplay());
+        [...main.childNodes].forEach(child => main.removeChild(child));
+        main.appendChild(toDoDisplay.h2);
+        main.appendChild(toDoDisplay.display);
     });
 
 

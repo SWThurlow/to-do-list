@@ -12,9 +12,12 @@ function displayToDoList(display) {
         const due = document.createElement('p');
         due.textContent = item.due;
         div.appendChild(due);
-        const priority = document.createElement('p')
+        const expand = new Image(24, 24);
+        expand.src = './imgs/expand.png';
+        div.appendChild(expand);
+        /*const priority = document.createElement('p')
         priority.textContent = item.priority;
-        div.appendChild(priority);
+        div.appendChild(priority);*/
         display.appendChild(div);
 
         let priorityValue;
@@ -36,23 +39,26 @@ function displayToDoList(display) {
                 break;
         }
         div.setAttribute('data-priority', priorityValue);
+        /*
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.addEventListener('click', () => {
             display.removeChild(div);
-            list.splice(list.indexOf(item), 1);
+            toDoList.splice(toDoList.indexOf(item), 1);
         });
         div.appendChild(deleteBtn);
-        display.appendChild(div);
+        display.appendChild(div);*/
     });
 }
 
-function toDoDisplay() {
+const toDoDisplay = (() => {
     let h2 = document.createElement('h2');
     h2.textContent = "To Do's";
+
     let display = document.createElement('section');
     displayToDoList(display);
-    return (h2, display)
-}
+
+    return { h2, display } 
+})();
 
 export { toDoDisplay }
