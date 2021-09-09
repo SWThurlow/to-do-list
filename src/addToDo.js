@@ -2,7 +2,7 @@
 let toDoList = [{
     title: 'Hello!',
     desc: 'Howdy Neighbour.',
-    due: '15/02/2022',
+    due: '2022-02-15',
     priority: '4',
 }];
 
@@ -11,6 +11,7 @@ const addToDoForm = (() =>{
     const toDoForm = document.createElement('div');
     toDoForm.classList.add('toDoForm');
 
+    const title = document
     const titleLabel = document.createElement('label');
     titleLabel.textContent = 'Title:';
     titleLabel.setAttribute('for', 'titleInput')

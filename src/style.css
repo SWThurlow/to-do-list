@@ -17,9 +17,9 @@ nav {
 
 main {
     width: 80vw;
-    background-color: yellow;
 }
-/*Adding to dos*/
+
+/*Adding/editing to dos*/
 .toDoForm {
     width: 40vw;
     display: grid;
