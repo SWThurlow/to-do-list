@@ -3,7 +3,27 @@ let toDoList = [{
     title: 'Hello!',
     desc: 'Howdy Neighbour.',
     due: '2022-02-15',
+    priority: '5',
+}, {
+    title: 'Hello!',
+    desc: 'Howdy Neighbour.',
+    due: '2022-02-15',
     priority: '4',
+}, {
+    title: 'Hello!',
+    desc: 'Howdy Neighbour.',
+    due: '2022-02-15',
+    priority: '3',
+}, {
+    title: 'Hello!',
+    desc: 'Howdy Neighbour.',
+    due: '2022-02-15',
+    priority: '2',
+}, {
+    title: 'Hello!',
+    desc: 'Howdy Neighbour.',
+    due: '2022-02-15',
+    priority: '1',
 }];
 
 //Function to generate form to add a to do.

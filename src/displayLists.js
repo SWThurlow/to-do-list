@@ -8,6 +8,44 @@ import Shrink from './imgs/shrink.png';
 import Edit from './imgs/edit.png';
 import Tick from './imgs/tick.png';
 
+
+//Key for priority colours.
+const key = (()=>{
+    const div = document.createElement('div');
+    div.classList.add('priorityKey');
+
+    const keyLabel = document.createElement('p');
+    keyLabel.textContent = 'Priority Colours:';
+    div.appendChild(keyLabel);
+
+    const five = document.createElement('p');
+    five.textContent = '5';
+    five.classList.add('five');
+    div.appendChild(five);
+
+    const four = document.createElement('p');
+    four.textContent = '4';
+    four.classList.add('four');
+    div.appendChild(four);
+
+    const three = document.createElement('p');
+    three.textContent = '3';
+    three.classList.add('three');
+    div.appendChild(three);
+
+    const two = document.createElement('p');
+    two.textContent = '2';
+    two.classList.add('two');
+    div.appendChild(two);
+
+    const one = document.createElement('p');
+    one.textContent = '1';
+    one.classList.add('one');
+    div.appendChild(one);
+
+    return { div }
+})()
+
 //Displaying list on screen.
 function displayToDoList(display) {
     toDoList.forEach(item => {
@@ -91,7 +129,6 @@ function displayToDoList(display) {
             div.appendChild(complete)
 
             div.classList.add('toDoForm');
-            
         });
 
         //To navigate out of the expanded view.
@@ -116,25 +153,23 @@ function displayToDoList(display) {
             div.appendChild(edit);
         });
 
-        let priorityValue;
         switch(item.priority){
             case '1': 
-                priorityValue = 1;
+                div.setAttribute('data-priority', 1);
                 break;
             case '2':
-                priorityValue = 2;
+                div.setAttribute('data-priority', 2);
                 break;
             case '3':
-                priorityValue = 3;
+                div.setAttribute('data-priority', 3);
                 break;
             case '4':
-                priorityValue = 4;
+                div.setAttribute('data-priority', 4);
                 break;
             case '5':
-                priorityValue = 5;
+                div.setAttribute('data-priority', 5);
                 break;
         }
-        div.setAttribute('data-priority', priorityValue);
         
         display.appendChild(div);
     });
@@ -150,4 +185,4 @@ const toDoDisplay = (() => {
     return { h2, display } 
 })();
 
-export { toDoDisplay }
+export { key, toDoDisplay }

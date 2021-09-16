@@ -2,7 +2,7 @@ import './resetstyle.css';
 import './style.css';
 //Imports.
 import { addToDoForm } from './addToDo.js'; 
-import { toDoDisplay } from './displayLists';
+import { key, toDoDisplay } from './displayLists';
 
 //Page elements object.
 const pageElements = (() => {
@@ -34,6 +34,7 @@ const pageElements = (() => {
     displayToDos.addEventListener('click', () => {
         [...main.childNodes].forEach(child => main.removeChild(child));
         main.appendChild(toDoDisplay.h2);
+        main.appendChild(key.div);
         main.appendChild(toDoDisplay.display);
     });
 
